@@ -2,6 +2,7 @@ import GlassmorphicNav from "../components/glassmorphicnav";
 import WaveAnimation from "../components/waveanimation";
 import Marquee from "../components/marquee";
 import Card from "../components/card";
+import Gallery from "../components/gallery";
 import "../styles/app.css";
 
 export default function Home() {
@@ -25,6 +26,10 @@ export default function Home() {
             <Card cardNumber={1} />
             <Card cardNumber={2} />
           </div>
+        </div>
+        <div className="z-10 w-5/6 flex flex-col items-center gap-16 py-8">
+          <h1 className="text-header">How I fit with Patronus</h1>
+          <Gallery />
         </div>
       </div>
     </main>
