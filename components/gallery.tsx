@@ -13,9 +13,101 @@ import ppopupdin from '../assets/ppopup-din.png'
 import ReactApexChart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
 
-function Gallery() {
+interface PaperArticle {
+  title: string;
+  authors: string;
+  date: string;
+  url: string;
+}
+
+export default function Gallery() {
   const [tab, setTab] = useState(0);
   const [hoveredLayer, setHoveredLayer] = useState<number>(-1);
+  const grabamealChart: number[] = [3, 7, 4, 1];
+  const allenjparkChart: number[] = [5, 14, 0, 1];
+  const intcomChart: number[] = [2, 4, 1, 1];
+  const recentPaperArticles: PaperArticle[] = [
+    {
+      title: "Detecting hallucinations in large language models using semantic entropy",
+      authors: "Kuhn, L. et al.",
+      date: "19 June 2024",
+      url: "https://www.nature.com/articles/s41586-024-07421-0"
+    },
+  {
+    title: "Scoop: Forbes threatens Perplexity with legal action",
+    authors: "Axios",
+    date: "18 June 2024",
+    url: "https://www.axios.com/2024/06/18/forbes-perplexity-ai-legal-action-copyright"
+  },
+  {
+    title: "Sequoia Backs AI Startup That Automates Engineering Tasks",
+    authors: "Bloomberg",
+    date: "18 June 2024",
+    url: "https://www.bloomberg.com/news/articles/2024-06-18/sequoia-backs-ai-startup-that-automates-engineering-tasks"
+  },
+  {
+    title: "'We don't need Sora anymore': Luma's new AI video generator Dream Machine slammed with traffic after debut",
+    authors: "VentureBeat",
+    date: "12 June 2024",
+    url: "https://venturebeat.com/ai/we-dont-need-sora-anymore-lumas-new-ai-video-generator-dream-machine-slammed-with-traffic-after-debut/"
+  },
+  {
+    title: "A Careful Examination of Large Language Model Performance on Grade School Arithmetic",
+    authors: "Zhang, Hugh, et al.",
+    date: "1 May 2024",
+    url: "https://arxiv.org/abs/2405.00332"
+  },
+  {
+    title: "Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences",
+    authors: "Shankar, Shreya, et al.",
+    date: "18 April 2024",
+    url: "https://arxiv.org/abs/2404.12272"
+  }
+  ]
+
+  const getChartOptions = (projectName: string): ApexOptions => {
+    return {
+      colors: ["#ab77ff", "#4d2ff1", "#3e3571", "#ad45e0"],
+      plotOptions: {
+        pie: {
+          expandOnClick: false,
+          donut: {
+            labels: {
+              show: true,
+              name: {
+                show: true,
+              },
+              value: {
+                show: true,
+                formatter: function (value) {
+                  return value + " days";
+                }
+              },
+              total: {
+                show: true,
+                label: `${projectName}`,
+                color: "var(--solid-colors--black)",
+                formatter: function (w) {
+                  const sum = w.globals.seriesTotals.reduce((a: number, b: number) => {
+                    return a + b;
+                  }, 0);
+                  return sum + ' days';
+                },
+              }
+            },
+            size: "80%",
+          },
+        },
+      },
+      labels: ["Design", "Frontend", "Backend", "Deploy"],
+      dataLabels: {
+        enabled: false,
+      },
+      legend: {
+        show: false,
+      },
+    };
+  };
 
   return (
     <div className="gallery">
@@ -59,7 +151,7 @@ function Gallery() {
           </div>
       </div>
       <div className="gallery-content">
-        <div className="w-full h-full flex-col gap-16" style={tab === 0 ? {display: 'flex'} : {display: 'none'}}>
+        <div className="gallery-content-inner" style={tab === 0 ? {display: 'flex'} : {display: 'none'}}>
           <div>
             I saw how consequential mistakes were at the acquired healthcare startup & built an internal prompting tool that aggregated calls and streamlined manual evaluation.
             While pursuing a gen. AI startup, a frequently mentioned hair on fire problem from customer discovery interviews was evaluating LLM outputs. Experiencing this ourselves, I understand how difficult and important the problem is.<br/>
@@ -132,9 +224,93 @@ function Gallery() {
           </div>
           </div>
         </div>
+        <div className="gallery-content-inner" style={tab === 1 ? {display: 'flex'} : {display: 'none'}}>
+          <div>
+            I've taken many ideas and features from zero to production, extending beyond software engineering to designing products, interviewing customers, etc.
+            As a result, I've worked and communicated across every product chain: design-frontend, frontend-backend, ML-code, and code-deployment.
+            My portfolio below has a more extensive list of my projects and applications.<br/>
+          </div>
+          <div className="flex w-full h-full py-4 justify-between items-center">
+            <div className="project-card" onClick={() => window.open('https://allenjpark.com', '_blank')}>
+              <img src={allenjpark.src} alt="allenjpark" className="h-8"/>
+              <div>portfolio</div>
+            </div>
+            <div className="project-card" onClick={() => window.open('https://sogaeting.vercel.app', '_blank')}>
+              <img src={sogaeting.src} alt="sogaeting" className="h-8"/>
+              <div>sogaeting</div>
+            </div>
+            <div className="project-card" onClick={() => window.open('https://fronthouse-eosin.vercel.app', '_blank')}>
+              <svg height="24" viewBox="0 0 30 28" className="project-card:hover:fill-white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.875 24.75H26.125M6.875 19.25H26.125L27.5 6.875L22 11L16.5 4.125L11 11L5.5 6.875L6.875 19.25Z" stroke="var(--solid-colors--black)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div>fronthouse</div>
+            </div>
+          </div>
+        </div>
+        <div className="gallery-content-inner" style={tab === 2 ? {display: 'flex'} : {display: 'none'}}>
+          <div className="w-full">
+            Startups aren't easy. They are extremely demoralizing. I experienced it while pursuing a marketplace idea selling leftover organic produce from local farmers markets.
+            I started door to door and iterated on distribution approaches (i.e. target lower middle class neighborhoods since affluent neighborhoods are price inelastic), going from $0 MRR to ~$55 MRR in a month and ending with ~$280 MRR. 
+            {/* Designed and built a website with quick search and one click purchase.<br/> */}
+            {/* Marketed to specific neighborhoods after conducting ideal customer segment research.<br/> */}
+          </div>
+          <div className="flex w-full h-full justify-between items-center">
+            <img src={apples.src} alt="apples" className="w-1/4 rounded-lg object-contain"/>
+            <img src={tomatoes.src} alt="cherrytomato" className="w-1/4 rounded-lg object-contain"/>
+            <img src={zucchini.src} alt="zucchini" className="w-1/4 rounded-lg object-contain"/>
+          </div>
+        </div>
+        <div className="gallery-content-inner" style={tab === 3 ? {display: 'flex'} : {display: 'none'}}>
+          <div>
+            Speed is your biggest advantage as a startup. I've taken applications and features from design to deployment in days.
+            Accelerating the development cycle and getting user feedback as soon as possible is not only exhilarating but also critical for success.
+          </div>
+          <div className="w-full flex flex-col gap-12">
+            <h1 className="text-2xl font-semibold text-center">Project Lifecycles</h1>
+            <div className="h-full w-full flex">
+              <ReactApexChart options={getChartOptions("Portfolio")} series={allenjparkChart} type="donut" width="90%" className="w-1/3 flex justify-center" />
+              <ReactApexChart options={getChartOptions("Grabameal")} series={grabamealChart} type="donut" width="90%" className="w-1/3 flex justify-center" />
+              <ReactApexChart options={getChartOptions("Intcom")} series={intcomChart} type="donut" width="90%" className="w-1/3 flex justify-center" />
+            </div>
+          </div>
+        </div>
+        <div className="gallery-content-inner" style={tab === 4 ? {display: 'flex'} : {display: 'none'}}>
+          <div>
+            I'll always have the student mindset to be curious and constantly learn. Innovation moves really fast so it's crucial to keep up with the latest models and developments.
+            One way I keep myself accountable is by exchanging tech news and research papers with my close friend and previous co-founder.
+            Here are some of papers and articles I've recently sent to my friend.
+          </div>
+          <div className="flex gap-4 py-8 overflow-x-scroll w-full">
+            {
+              recentPaperArticles.map((article, index) => {
+                return (
+                  <div key={index} className="paperarticle-card" onClick={() => window.open(article.url, '_blank')}>
+                    <div className="font-semibold">{article.title}</div>
+                    <div className="flex flex-col gap-2">
+                      <div className="text-[#6b7280]">{article.authors}</div>
+                      <div className="text-[#6b7280] font-semibold">{article.date}</div>
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </div>
+        </div>
+        <div className="gallery-content-inner !gap-8" style={tab === 5 ? {display: 'flex'} : {display: 'none'}}>
+          <div>
+            My favorite experience from Princeton was fostering a strong culture with P Pop Up.
+            The unbreakable bond was rooted in working extremely hard together towards a unified mission. I want to do the same at Patronus AI.
+            I've also been fortunate to meet such talented people (some started YC companies or joined early stage startups like Warp)
+            through organizing startup dinners which demonstrated the importance of genuine curiosity and positive sum thinking.
+            I'd want to contribute beyond the products we ship and into the culture that is fostered.
+          </div>
+          <div className="flex w-full h-full justify-between items-center">
+            <img src={ppopupdin.src} alt="ppopupdin" className="w-1/4 rounded-lg object-contain"/>
+            <img src={startupdin1.src} alt="startupdin1" className="w-1/4 rounded-lg object-contain"/>
+            <img src={startupdin2.src} alt="startupdin2" className="w-1/4 rounded-lg object-contain"/>
+          </div>
+        </div>
       </div>
     </div>
     );
   };
-
-  export default Gallery;
