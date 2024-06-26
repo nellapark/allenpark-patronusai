@@ -1,0 +1,29 @@
+.image-container {
+  position: relative;
+}
+
+.bw-image {
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity .75s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.color-image {
+  position: absolute;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.75s ease;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image-container:hover .bw-image {
+  opacity: 0;
+}
+
+.image-container:hover .color-image {
+  opacity: 1;
+}

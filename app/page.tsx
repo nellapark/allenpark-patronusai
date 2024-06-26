@@ -1,5 +1,6 @@
-import WaveAnimation from "../components/waveanimation";
 import GlassmorphicNav from "../components/glassmorphicnav";
+import WaveAnimation from "../components/waveanimation";
+import Marquee from "../components/marquee";
 import "../styles/app.css";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         </div>
       </div>
       <WaveAnimation />
+      <Marquee />
     </main>
   );
 }
