@@ -2,19 +2,16 @@
   display: flex;
   width: 100%;
   height: 525px;
-  /* background-color: white; */
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.5);
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .1), 0 2px 8px rgba(0, 0, 0, .3);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 14px;
-  /* padding: 18px 24px; */
 }
 
 .gallery-tabs {
   width: 25%;
-  /* background-color: orange; */
   height: 100%;
   display: flex;
   padding: 24px;
@@ -24,7 +21,7 @@
 }
 
 .gallery-tab {
-  color: #000;
+  color: var(--solid-colors--black);
   font-weight: 700;
   padding: 16px 18px;
   border-radius: 4px;
@@ -41,10 +38,64 @@
 .gallery-content {
   width: 75%;
   height: 100%;
-  color: #000;
-  /* background-color: #FEE4E2; */
+  color: var(--solid-colors--black);
   box-sizing: border-box;
   padding: 36px;
   border-radius: 0px 14px 14px 0px;
   font-size: 18px;
+}
+
+.experience-layers {
+  position: relative;
+  width: 60%;
+}
+
+.experience-layer {
+  position: absolute;
+  width: 100%;
+}
+
+.experience-layer svg {
+  fill: rgba(83, 24, 235, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.experience-layer svg .border {
+  opacity: 0;
+  transition: .25s stroke-width cubic-bezier(.55,0,.1,1), .6s filter cubic-bezier(.55,0,.1,1), .3s opacity cubic-bezier(.55,0,.1,1);
+}
+.experience-layer:hover svg .border {
+  opacity: 1;
+  stroke-width: 4;
+  filter: blur(6px);
+  transition: .25s stroke-width cubic-bezier(.55,0,.1,1), 1s filter cubic-bezier(.55,0,.1,1), .6s opacity cubic-bezier(.55,0,.1,1);
+}
+.experience-layer svg .main {
+  fill: rgba(255, 255, 255, 0.025);
+  stroke: rgba(255, 255, 255, 0.1);
+  transition: .25s opacity cubic-bezier(.55,0,.1,1);
+}
+.experience-layer:hover svg .main {
+  opacity: 1;
+}
+
+.layer-1 {
+  z-index: 3;
+}
+.layer-2 {
+  z-index: 2;
+  top: 2.5rem;
+}
+.layer-3 {
+  z-index: 1;
+  top: 5rem;
+}
+
+.experiance-layer-label {
+  height: 3rem;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

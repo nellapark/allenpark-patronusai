@@ -2,9 +2,20 @@
 
 import React, {useRef, useEffect, useState} from 'react';
 import '../styles/gallery.css';
+import allenjpark from '../assets/allenjpark_icon.png';
+import sogaeting from '../assets/sogaeting_icon.png';
+import tomatoes from '../assets/tomatoes.png';
+import apples from '../assets/apples.png';
+import zucchini from '../assets/zucchini.png'
+import startupdin1 from '../assets/startup-din-1.png'
+import startupdin2 from '../assets/startup-din-2.png'
+import ppopupdin from '../assets/ppopup-din.png'
+import ReactApexChart from 'react-apexcharts';
+import { ApexOptions } from 'apexcharts';
 
 function Gallery() {
   const [tab, setTab] = useState(0);
+  const [hoveredLayer, setHoveredLayer] = useState<number>(-1);
 
   return (
     <div className="gallery">
@@ -48,7 +59,79 @@ function Gallery() {
           </div>
       </div>
       <div className="gallery-content">
-        
+        <div className="w-full h-full flex-col gap-16" style={tab === 0 ? {display: 'flex'} : {display: 'none'}}>
+          <div>
+            I saw how consequential mistakes were at the acquired healthcare startup & built an internal prompting tool that aggregated calls and streamlined manual evaluation.
+            While pursuing a gen. AI startup, a frequently mentioned hair on fire problem from customer discovery interviews was evaluating LLM outputs. Experiencing this ourselves, I understand how difficult and important the problem is.<br/>
+          </div>
+          <div className="flex flex-col gap-12">
+            <h1 className="text-center text-2xl font-semibold">Layers of Experience</h1>
+            <div className='flex w-full gap-12'>
+              <div className="experience-layers">
+                <button className="experience-layer layer-1" onMouseEnter={() => setHoveredLayer(0)} onMouseLeave={() => setHoveredLayer(-1)}>
+                  <svg viewBox="-2 -2 760 95" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path className="main" d="M146.587 0.970592C147.12 0.66232 147.725 0.5 148.34 0.5H607.656C608.271 0.5 608.876 0.662322 609.409 0.9706L752.85 83.9706C755.948 85.7631 754.676 90.5 751.097 90.5H4.89849C1.3194 90.5 0.0477215 85.7631 3.14557 83.9706L146.587 0.970592Z"></path>
+                    <path className="border" d="M146.587 0.970592C147.12 0.66232 147.725 0.5 148.34 0.5H607.656C608.271 0.5 608.876 0.662322 609.409 0.9706L752.85 83.9706C755.948 85.7631 754.676 90.5 751.097 90.5H4.89849C1.3194 90.5 0.0477215 85.7631 3.14557 83.9706L146.587 0.970592Z" stroke="#5318eb" stroke-opacity="1"></path>
+                    <path d="M146.338 0.537819C146.947 0.185509 147.638 0 148.341 0H607.657C608.36 0 609.051 0.185513 609.66 0.537825L753.101 83.5378C756.642 85.5864 755.188 91 751.098 91H4.89934C0.808961 91 -0.64441 85.5864 2.896 83.5378L146.338 0.537819Z"></path>
+                  </svg>
+                </button>
+                <button className="experience-layer layer-2" onMouseEnter={() => setHoveredLayer(1)} onMouseLeave={() => setHoveredLayer(-1)}>
+                  <svg viewBox="-2 -2 760 95" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path className="main" d="M146.587 0.970592C147.12 0.66232 147.725 0.5 148.34 0.5H607.656C608.271 0.5 608.876 0.662322 609.409 0.9706L752.85 83.9706C755.948 85.7631 754.676 90.5 751.097 90.5H4.89849C1.3194 90.5 0.0477215 85.7631 3.14557 83.9706L146.587 0.970592Z"></path>
+                    <path className="border" d="M146.587 0.970592C147.12 0.66232 147.725 0.5 148.34 0.5H607.656C608.271 0.5 608.876 0.662322 609.409 0.9706L752.85 83.9706C755.948 85.7631 754.676 90.5 751.097 90.5H4.89849C1.3194 90.5 0.0477215 85.7631 3.14557 83.9706L146.587 0.970592Z" stroke="#5318eb" stroke-opacity="1"></path>
+                    <path d="M146.338 0.537819C146.947 0.185509 147.638 0 148.341 0H607.657C608.36 0 609.051 0.185513 609.66 0.537825L753.101 83.5378C756.642 85.5864 755.188 91 751.098 91H4.89934C0.808961 91 -0.64441 85.5864 2.896 83.5378L146.338 0.537819Z"></path>
+                    <path d="M385 11.5L597.112 11.5C597.394 11.5 597.67 11.5794 597.909 11.729L696.839 73.729C698.115 74.5288 697.549 76.5 696.042 76.5L385 76.5C384.172 76.5 383.5 75.8284 383.5 75L383.5 13C383.5 12.1716 384.172 11.5 385 11.5Z" stroke="white" stroke-opacity="0.1"></path>
+                    <path d="M366.5 11.5L157.397 11.5L53.7385 76.5L366.5 76.5L366.5 11.5Z" stroke="white" stroke-opacity="0.1"></path>
+                  </svg>
+                </button>
+                <button className="experience-layer layer-3" onMouseEnter={() => setHoveredLayer(2)} onMouseLeave={() => setHoveredLayer(-1)}>
+                  <svg viewBox="-2 -2 760 95" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                    <path className="main" d="M146.587 0.970592C147.12 0.66232 147.725 0.5 148.34 0.5H607.656C608.271 0.5 608.876 0.662322 609.409 0.9706L752.85 83.9706C755.948 85.7631 754.676 90.5 751.097 90.5H4.89849C1.3194 90.5 0.0477215 85.7631 3.14557 83.9706L146.587 0.970592Z"></path>
+                    <path className="border" d="M146.587 0.970592C147.12 0.66232 147.725 0.5 148.34 0.5H607.656C608.271 0.5 608.876 0.662322 609.409 0.9706L752.85 83.9706C755.948 85.7631 754.676 90.5 751.097 90.5H4.89849C1.3194 90.5 0.0477215 85.7631 3.14557 83.9706L146.587 0.970592Z" stroke="#5318eb" stroke-opacity="1"></path>
+                    <path d="M146.338 0.537819C146.947 0.185509 147.638 0 148.341 0H607.657C608.36 0 609.051 0.185513 609.66 0.537825L753.101 83.5378C756.642 85.5864 755.188 91 751.098 91H4.89934C0.808961 91 -0.64441 85.5864 2.896 83.5378L146.338 0.537819Z"></path>
+                  </svg>
+                </button>
+              </div>
+              {
+                hoveredLayer === -1 ? (
+                  <div className="w-2/5 h-full flex flex-col">
+                    <div className="experiance-layer-label">Human Evaluation</div>
+                    <div className="experiance-layer-label">Prompt Engineering & RAG</div>
+                    <div className="experiance-layer-label">Embeddings & Vector DBs</div>
+                  </div>
+                ) :
+                hoveredLayer === 0 ? (
+                  <div className="w-2/5 flex flex-col gap-6">
+                    <div className="font-semibold">Human Evaluation</div>
+                    <div className="text-sm">
+                      Reinforcement Learning from Human Feedback (RLHF)
+                    </div>
+                  </div>
+                ) :
+                hoveredLayer === 1 ? (
+                  <div className="w-2/5 flex flex-col gap-6">
+                    <div className="font-semibold">Prompt Engineering & RAG</div>
+                    <div className="flex flex-col gap-2 text-sm">
+                      <div>Task & Instruction Splitting</div>
+                      <div>Example Context & Templates with Delimiters</div>
+                    </div>
+                  </div>
+                ) :
+                // hoveredLayer === 2 ? (
+                  (
+                    <div className="w-2/5 flex flex-col gap-6">
+                    <div className="font-semibold">Embeddings & Vector DBs</div>
+                    <div className="flex flex-col gap-2 text-sm">
+                      <div>Create Embeddings (OpenAI)</div>
+                      <div>Varying Chunking Methods</div>
+                      <div>Interact with Vector DBs (FAISS & Pinecone)</div>
+                    </div>
+                  </div>
+                )
+              }
+          </div>
+          </div>
+        </div>
       </div>
     </div>
     );
