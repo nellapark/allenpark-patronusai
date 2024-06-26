@@ -1,0 +1,76 @@
+.navbar {
+  color: var(--solid-colors--black);
+  gap: 4px;
+  padding: 8px;
+  display: flex;
+  margin: 70px 0 0;
+  align-items: center;
+  line-height: 1;
+  font-size: 12px;
+  list-style: none;
+  pointer-events: all;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, .1), 0 2px 8px rgba(0, 0, 0, .3);
+}
+
+.navbar-container {
+  left: 0;
+  top: 0;
+  height: 0;
+  width: 100vw;
+  z-index: 999;
+  display: flex;
+  position: sticky;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-element {
+  color: var(--solid-colors--black);
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: 500;
+  align-items: center;
+  display: inline-flex;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 12px 0;
+  margin: -12px 0;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
+}
+
+.navbar-element span {
+  height: 24px;
+  padding: 0 12px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+.navbar-element:hover span {
+  background: rgba(83, 24, 235, 0.1);
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.04);
+}
+
+.navbar-element-cta {
+  gap: .5em;
+  background-image: linear-gradient(103deg, var(--gradient-color--purple), var(--gradient-color--blue));
+  white-space: nowrap;
+  color: #f4f4f4;
+  padding: 7px 10px;
+  border-radius: 20px;
+  text-overflow: hidden;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}

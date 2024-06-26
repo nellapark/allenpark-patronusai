@@ -4,7 +4,7 @@
 
 :root {
   --solid-colors--black: #1f1f1f;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --gradient-color--purple: #ab77ff;
+  --gradient-color--blue: #02f;
 }
 
