@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.1.1",
+    "@react-spring/web": "^9.7.3",
     "@react-three/drei": "^9.107.1",
     "@react-three/fiber": "^8.16.8",
     "apexcharts": "^3.49.2",

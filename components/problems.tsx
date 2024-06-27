@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import '../styles/problems.css';
 import Correlation from '../assets/correlations.png';
 import TweetGrid from '../components/tweetgrid';
+import ContaminationVisual from '../components/contaminationvisual';
 
 interface Tweet {
   img: string;
@@ -172,7 +173,7 @@ export default function Problems() {
                 <TweetGrid tweets={tweets} />
               </div>
             ) : hoveredProblem === 0 ? (
-              <div />
+              <ContaminationVisual />
             ) : hoveredProblem === 1 ? (
               <div />
             ) : hoveredProblem === 2 ? (
