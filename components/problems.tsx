@@ -5,6 +5,7 @@ import '../styles/problems.css';
 import Correlation from '../assets/correlations.png';
 import TweetGrid from '../components/tweetgrid';
 import ContaminationVisual from '../components/contaminationvisual';
+import BarGraphs from '../components/bargraphs';
 
 interface Tweet {
   img: string;
@@ -175,7 +176,7 @@ export default function Problems() {
             ) : hoveredProblem === 0 ? (
               <ContaminationVisual />
             ) : hoveredProblem === 1 ? (
-              <div />
+              <BarGraphs />
             ) : hoveredProblem === 2 ? (
               <img src={Correlation.src} alt="correlation" />
             ) : null
