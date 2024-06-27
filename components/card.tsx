@@ -1,11 +1,21 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import '../styles/card.css';
+import fiveStudents from '../assets/fiveStudents.png';
+import universityPopUps from '../assets/universityPopUps.png';
+import restaurantServices from '../assets/restaurantServices.png';
+import ownMenus from '../assets/ownMenus.png';
 
 interface CardProps {
   cardNumber: number;
 }
 
 export default function Card({cardNumber}: CardProps) {
+  const [fiveStudentsTextHover, setFiveStudentsTextHover] = useState(false);
+  const [universityPopUpsTextHover, setUniversityPopUpsTextHover] = useState(false);
+  const [restaurantServicesTextHover, setRestaurantServicesTextHover] = useState(false);
+  const [ownMenusTextHover, setOwnMenusTextHover] = useState(false);
   const headers: string[] = ["Founding engineer @acquired medical LLM copilot startup", "Previous founder in gen AI space", "P Pop Up"]
   const descriptions: string[] = [
     "I built the initial product with Typescript, iterating on features based on customer feedback and handling deployments to AWS. More examples of my work: prevented LLM outputs from attributing incorrect context references to a response & handled short circuiting boolean operations on medical insurance claim criterias.",
@@ -62,10 +72,16 @@ export default function Card({cardNumber}: CardProps) {
       <h1 className="card-header">{headers[cardNumber]}</h1>
       {
         cardNumber === 2 ?
-        <div>
-          Rallied up <u>5 full time students</u> for a restaurant pop up idea. 
-          After powering through a cease and desist, I led the team from <u>university pop ups</u> to catering and <u>hosting services at a restaurant</u> with our <u>own menus</u>. 
+        <div className="relative">
+          Rallied up <span className="underline cursor-pointer" onMouseEnter={() => setFiveStudentsTextHover(true)} onMouseLeave={() => setFiveStudentsTextHover(false)}>5 full time students</span> for a restaurant pop up idea. 
+          After powering through a cease and desist, I led the team from <span className="underline cursor-pointer" onMouseEnter={() => setUniversityPopUpsTextHover(true)} onMouseLeave={() => setUniversityPopUpsTextHover(false)}>universitypop ups</span> to
+          catering and <span className="underline cursor-pointer" onMouseEnter={() => setRestaurantServicesTextHover(true)} onMouseLeave={() => setRestaurantServicesTextHover(false)}>hosting services at a restaurant</span> with
+          our <span className="underline cursor-pointer" onMouseEnter={() => setOwnMenusTextHover(true)} onMouseLeave={() => setOwnMenusTextHover(false)}>own menus</span>. 
           Starting with nothing, we made $9,216.44 and the team is now up to 39 with subteam heads I personally mentored.
+          {fiveStudentsTextHover && (<img className="absolute w-full" src={fiveStudents.src} />)}
+          {universityPopUpsTextHover && (<img className="absolute w-full" src={universityPopUps.src} />)}
+          {restaurantServicesTextHover && (<img className="absolute w-full" src={restaurantServices.src} />)}
+          {ownMenusTextHover && (<img className="absolute w-1/2 top-0 left-[-50%] -translate-x-6" src={ownMenus.src} />)}
         </div>
         :
         <div>{descriptions[cardNumber]}</div>

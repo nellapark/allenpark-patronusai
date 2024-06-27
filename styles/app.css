@@ -82,13 +82,13 @@
 
 @keyframes floatBackground {
   0% {
-    transform: translateY(0px);
+    transform: translateY(70px);
   }
   50% {
-    transform: translateY(20px);
+    transform: translateY(90px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(70px);
   }
 }
 
