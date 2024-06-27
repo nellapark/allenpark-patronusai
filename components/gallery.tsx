@@ -116,7 +116,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
   }
 
   return (
-    <div className={`gallery ${isMobile ? "flex-col" : ""}`}>
+    <div className={`gallery ${isMobile ? "flex-col h-[800px]" : "h-[525px]"}`}>
        <div className={`gallery-tabs ${isMobile ? "flex-row w-full h-1/4 flex-wrap" : "flex-col w-1/4 h-full"}`}>
         <div className={`gallery-tab ${isMobile ? "tab-mobile-padding" : ""}`} style={tab === 0 ? {backgroundColor: '#F2F1EF'} : {}} onClick={() => setTab(0)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 384 512">
