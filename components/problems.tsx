@@ -146,10 +146,7 @@ export default function Problems({ isMobile }: { isMobile: boolean }) {
       {
         isMobile ?
         <>
-          <div className="flex w-full h-[600px]">
-            <TweetGrid tweets={tweets} />
-          </div>
-          <div className="flex w-full h-[600px]">
+          <div className="flex flex-col w-full h-[600px]">
             <div className="problem-section border-b border-[#1f1f1f] border-opacity-20">
               <h1 className="problem-header">Open Source Will Fail</h1>
               <div className="problem-description">
