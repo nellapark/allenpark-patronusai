@@ -57,7 +57,7 @@
   align-items: center;
 }
 .navbar-element:hover span {
-  background: rgba(83, 24, 235, 0.1);
+  background: rgb(238, 232, 253);
   box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.04);
 }
 
