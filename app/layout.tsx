@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script
+        id="microsoft-clarity"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
