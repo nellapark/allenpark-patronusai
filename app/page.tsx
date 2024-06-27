@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import GlassmorphicNav from "../components/glassmorphicnav";
 import WaveAnimation from "../components/waveanimation";
 import Marquee from "../components/marquee";
@@ -11,14 +11,17 @@ import Reservations from "../components/reservations";
 import "../styles/app.css";
 import dynamic from 'next/dynamic';
 const Gallery = dynamic(() => import('../components/gallery'), {ssr: false});
+import allenjpark from '../assets/allenjpark_icon.png';
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const perfectFitRef = useRef<HTMLDivElement>(null);
   const whyPatronusRef = useRef<HTMLDivElement>(null);
   const reservationsRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const loadingContainerRef = useRef<HTMLDivElement>(null);
 
   const createEmailTemplate = () => {
     if (typeof window !== 'undefined') {
@@ -26,8 +29,26 @@ export default function Home() {
     }
   }
 
+  const handleLoading = () => {
+    setIsLoading(false);
+    setTimeout(() => {
+      loadingContainerRef.current?.classList.add("fade-display");
+    }, 1000);
+    console.log("Hello Developer!")
+  }
+
+  useEffect(() => {
+    setTimeout(() => handleLoading(), 1000);
+  }, []);
+
   return (
     <main className="bg-white" ref={heroRef}>
+      <div ref={loadingContainerRef}>
+        <div className={`loading-background ${isLoading ? "" : "loading-hidden"}`}>
+          <img src={allenjpark.src} className="loading-image"/>
+        <div className="mt-2">Let&rsquo;s shape the future.</div>
+      </div>
+      </div>
       <GlassmorphicNav
         heroRef={heroRef}
         aboutRef={aboutRef}
@@ -35,6 +56,7 @@ export default function Home() {
         whyPatronusRef={whyPatronusRef}
         reservationsRef={reservationsRef}
         ctaRef={ctaRef}
+        isLoading={isLoading}
       />
       <div className="header-container">
         <h1 className="text-header">Allen Park &lt;&gt; Patronus AI</h1>

@@ -10,9 +10,10 @@ interface sectionRefs {
   whyPatronusRef: React.RefObject<HTMLDivElement>;
   reservationsRef: React.RefObject<HTMLDivElement>;
   ctaRef: React.RefObject<HTMLDivElement>;
+  isLoading: boolean
 }
 
-export default function GlassmorphicNav({heroRef, aboutRef, perfectFitRef, whyPatronusRef, reservationsRef, ctaRef}: sectionRefs) {
+export default function GlassmorphicNav({heroRef, aboutRef, perfectFitRef, whyPatronusRef, reservationsRef, ctaRef, isLoading}: sectionRefs) {
   const logosRef = useRef<HTMLUListElement>(null);
 
   const scrollToDiv = (divRef: React.RefObject<HTMLDivElement>) => {
@@ -30,7 +31,7 @@ export default function GlassmorphicNav({heroRef, aboutRef, perfectFitRef, whyPa
   }, []);
 
   return (
-    <div className="navbar-container">
+    <div className={`navbar-container ${isLoading ? "hidden" : "flex"}`}>
       <ul className="navbar">
         <li className="navbar-element" onClick={() => scrollToDiv(heroRef)}>
           <span>Home</span>

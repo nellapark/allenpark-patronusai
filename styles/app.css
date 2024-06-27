@@ -1,3 +1,46 @@
+.loading-image {
+  width: 72px;
+  object-fit: contain;
+  animation: load 1s ease-in-out infinite;
+}
+
+@keyframes load {
+  0% {
+    transform: translateY();
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY();
+  }
+}
+
+.loading-background {
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(137deg, var(--gradient-color--purple), var(--gradient-color--blue));
+  z-index: 999;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.loading-hidden {
+  opacity: 0 !important;
+}
+
+.fade-display {
+  display: none;
+}
+
 .header-container {
   position: absolute;
   top: 10.5%;
