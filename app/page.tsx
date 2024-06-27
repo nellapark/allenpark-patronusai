@@ -56,6 +56,11 @@ export default function Home() {
           <Problems />
         </div>
       </div>
+      <div className="flex flex-col items-center bg-[#1b0d20] w-full pt-32 py-8">
+        <div className="flex flex-col w-5/6 gap-8">
+          <h1 className="normal-text-header-light">Reservations Q&A</h1>
+        </div>
+      </div>
     </main>
   );
 }

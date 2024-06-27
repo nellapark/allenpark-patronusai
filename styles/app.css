@@ -98,10 +98,16 @@
 
 .normal-text-header-dark {
   color: var(--solid-colors--black);
-
   letter-spacing: -.04em;
   font-size: 5rem;
   line-height: 4.5rem;
   padding: 1rem 0rem;
   font-weight: 700;
+}
+
+.normal-text-header-light {
+  color: #fff;
+  letter-spacing: -.04em;
+  font-size: 4rem;
+  font-weight: 500;
 }
