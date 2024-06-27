@@ -5,11 +5,12 @@ import GlassmorphicNav from "../components/glassmorphicnav";
 import WaveAnimation from "../components/waveanimation";
 import Marquee from "../components/marquee";
 import Card from "../components/card";
-import Gallery from "../components/gallery";
 import Calculator from "../components/calculator";
 import Problems from "../components/problems";
 import Reservations from "../components/reservations";
 import "../styles/app.css";
+import dynamic from 'next/dynamic';
+const Gallery = dynamic(() => import('../components/gallery'), {ssr: false});
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
