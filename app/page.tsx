@@ -5,7 +5,8 @@ import Card from "../components/card";
 import Gallery from "../components/gallery";
 import Calculator from "../components/calculator";
 import Problems from "../components/problems";
-import Reservations from "@/components/reservations";
+import Reservations from "../components/reservations";
+import CTA from "../components/cta";
 import "../styles/app.css";
 
 export default function Home() {
@@ -63,15 +64,7 @@ export default function Home() {
           <Reservations />
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center h-screen w-full bg-[#1b0d20]">
-        <div className="hidden">Credit to Scale.com for the beautiful website and inspiration for this section!</div>
-        <div className="cta-header py-12">
-          The future of the <br /> industry <span className="styled-text">begins with us.</span>
-        </div>
-        <div className="cta-button">
-            Let's Work
-        </div>
-      </div>
+      <CTA />
     </main>
   );
 }
