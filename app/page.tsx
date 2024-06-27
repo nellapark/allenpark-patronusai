@@ -25,7 +25,7 @@ export default function Home() {
 
   const createEmailTemplate = () => {
     if (typeof window !== 'undefined') {
-      window.location.href = "mailto:parknella19@gmail.com?subject=Let&rsquo;s Work&body=Hey Allen,";
+      window.location.href = "mailto:parknella19@gmail.com?subject=Let's Work&body=Hey Allen,";
     }
   }
 
