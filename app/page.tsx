@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useRef } from 'react';
 import GlassmorphicNav from "../components/glassmorphicnav";
 import WaveAnimation from "../components/waveanimation";
 import Marquee from "../components/marquee";
@@ -6,13 +9,25 @@ import Gallery from "../components/gallery";
 import Calculator from "../components/calculator";
 import Problems from "../components/problems";
 import Reservations from "../components/reservations";
-import CTA from "../components/cta";
 import "../styles/app.css";
 
 export default function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const perfectFitRef = useRef<HTMLDivElement>(null);
+  const whyPatronusRef = useRef<HTMLDivElement>(null);
+  const reservationsRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
   return (
-    <main className="bg-white">
-      <GlassmorphicNav />
+    <main className="bg-white" ref={heroRef}>
+      <GlassmorphicNav
+        heroRef={heroRef}
+        aboutRef={aboutRef}
+        perfectFitRef={perfectFitRef}
+        whyPatronusRef={whyPatronusRef}
+        reservationsRef={reservationsRef}
+        ctaRef={ctaRef}
+      />
       <div className="header-container">
         <h1 className="text-header">Allen Park &lt;&gt; Patronus AI</h1>
         <div className="text-[--solid-colors--black] font-semibold">
@@ -25,7 +40,7 @@ export default function Home() {
       <div className="flex flex-col items-center w-full py-16 relative overflow-hidden">
         <div className="background-image" />
         <div className="styled-divider"></div>
-        <div className="z-10 w-5/6 flex flex-col items-center gap-16 py-24">
+        <div className="z-10 w-5/6 flex flex-col items-center gap-16 pt-24 pb-6" ref={aboutRef}>
           <h1 className="text-header">About Me</h1>
           <div className="flex justify-between w-full">
             <Card cardNumber={0} />
@@ -33,12 +48,12 @@ export default function Home() {
             <Card cardNumber={2} />
           </div>
         </div>
-        <div className="z-10 w-5/6 flex flex-col items-center gap-16 py-8">
+        <div className="z-10 w-5/6 flex flex-col items-center gap-16 pt-24 pb-12" ref={perfectFitRef}>
           <h1 className="text-header">How I fit with Patronus</h1>
           <Gallery />
         </div>
       </div>
-      <div className="flex flex-col items-center w-full py-32 gradient-background">
+      <div className="flex flex-col items-center w-full py-32 gradient-background" ref={whyPatronusRef}>
         <div className="flex items-center w-5/6 text-wrap justify-between">
           <div className="w-1/2 h-full pr-20 gap-4 flex flex-col break-words font-light">
             <h1 className="normal-text-header-dark">LLM Mistakes <br />are Costly</h1>
@@ -58,13 +73,21 @@ export default function Home() {
           <Problems />
         </div>
       </div>
-      <div className="flex flex-col items-center bg-[#1b0d20] w-full pt-32 py-8">
+      <div className="flex flex-col items-center bg-[#1b0d20] w-full pt-32 py-8" ref={reservationsRef}>
         <div className="flex flex-col w-5/6 gap-8">
           <h1 className="normal-text-header-light">Reservations Q&A</h1>
           <Reservations />
         </div>
       </div>
-      <CTA />
+      <div className="flex flex-col justify-center items-center h-screen w-full bg-[#1b0d20]" ref={ctaRef}>
+        <div className="hidden">Credit to Scale.com for the beautiful website and inspiration for this section!</div>
+        <div className="cta-header py-12">
+          The future of the <br /> industry <span className="styled-text">begins with us.</span>
+        </div>
+        <div className="cta-button" onClick={() => {window.location.href = "mailto:parknella19@gmail.com?subject=Let's Work&body=Hey Allen,";}}>
+            Let's Work
+        </div>
+      </div>
     </main>
   );
 }

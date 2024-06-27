@@ -3,8 +3,23 @@
 import React, {useRef, useEffect} from 'react';
 import '../styles/glassmorphicnav.css';
 
-export default function GlassmorphicNav() {
+interface sectionRefs {
+  heroRef: React.RefObject<HTMLDivElement>;
+  aboutRef: React.RefObject<HTMLDivElement>;
+  perfectFitRef: React.RefObject<HTMLDivElement>;
+  whyPatronusRef: React.RefObject<HTMLDivElement>;
+  reservationsRef: React.RefObject<HTMLDivElement>;
+  ctaRef: React.RefObject<HTMLDivElement>;
+}
+
+export default function GlassmorphicNav({heroRef, aboutRef, perfectFitRef, whyPatronusRef, reservationsRef, ctaRef}: sectionRefs) {
   const logosRef = useRef<HTMLUListElement>(null);
+
+  const scrollToDiv = (divRef: React.RefObject<HTMLDivElement>) => {
+    if (divRef.current) {
+      divRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const ul = logosRef.current;
@@ -17,23 +32,24 @@ export default function GlassmorphicNav() {
   return (
     <div className="navbar-container">
       <ul className="navbar">
-        <li className="navbar-element">
+        <li className="navbar-element" onClick={() => scrollToDiv(heroRef)}>
           <span>Home</span>
         </li>
-        <li className="navbar-element">
+        <li className="navbar-element" onClick={() => scrollToDiv(aboutRef)}>
           <span>About Me</span>
         </li>
-        <li className="navbar-element">
+        <li className="navbar-element" onClick={() => scrollToDiv(perfectFitRef)}>
           <span>Perfect Fit</span>
         </li>
-        <li className="navbar-element">
+        <li className="navbar-element" onClick={() => scrollToDiv(whyPatronusRef)}>
           <span>Why Patronus</span>
         </li>
-        <li className="navbar-element">
+        <li className="navbar-element" onClick={() => scrollToDiv(reservationsRef)}>
           <span>Reservations</span>
         </li>
         <div
           className="overflow-hidden rounded-[20px] opacity-100 w-auto cursor-pointer"
+          onClick={() => scrollToDiv(ctaRef)}
         >
           <a className="navbar-element-cta">
             The Ask
