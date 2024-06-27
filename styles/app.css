@@ -14,7 +14,6 @@
 .text-header {
   color: #fff;
   background-image: linear-gradient(120deg,#02f -100%, #b03de2 40%, 70%, #02f);
-  /* background-image: linear-gradient(114deg,#919fce,#b03de2 38%,#02f); */
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -74,7 +73,6 @@
   height: 100%;
   background-image: url('https://cdn.prod.website-files.com/64e655d42d3be60f582d0472/64ed03812dcb25c818ff40ce_abstract-lines-2.png');
   background-repeat: no-repeat;
-  /* background-position: center; */
   background-size: 150%;
   animation: floatBackground 10s ease-in-out infinite;
   .background-image img {
@@ -92,4 +90,18 @@
   100% {
     transform: translateY(0);
   }
+}
+
+.gradient-background {
+  background-image: linear-gradient(120deg, #ab77ff, #5318eb);
+}
+
+.normal-text-header-dark {
+  color: var(--solid-colors--black);
+
+  letter-spacing: -.04em;
+  font-size: 5rem;
+  line-height: 4.5rem;
+  padding: 1rem 0rem;
+  font-weight: 700;
 }
