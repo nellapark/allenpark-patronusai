@@ -12,7 +12,7 @@ export default function Reservations() {
   const [sixthQuestionSelected, setSixthQuestionSelected] = useState(false);
   
   return (
-    <div className="flex flex-col w-full gap-2 text-white font-light">
+    <div className="flex flex-col w-full gap-2 text-white font-extralight">
       <div>
         <div className="reservation" style={firstQuestionSelected ? {backgroundColor: 'var(--solid-colors--darkpurple)', borderBottomLeftRadius: 0, borderBottomRightRadius: 0} : {}} onClick={() => setFirstQuestionSelected(!firstQuestionSelected)}>
           <h1>You lack years of experience in the industry.</h1>
