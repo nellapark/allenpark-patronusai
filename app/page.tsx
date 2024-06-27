@@ -78,7 +78,7 @@ export default function Home() {
       )}
       <div className="header-container">
         <h1 className={`text-header ${isMobile ? "mobile-header-text" : ""}`}>Allen Park &lt;&gt; Patronus AI</h1>
-        <div className="text-[--solid-colors--black] font-semibold">
+        <div className={`text-[--solid-colors--black] font-semibold ${isMobile ? "text-sm" : ""}`}>
         Real world LLM evaluation is a hair on fire problem yet current solutions suck. <br />
         Let&rsquo;s shape <span className="styled-text">the landscape</span> and make the Moody&rsquo;s of AI.
         </div>
