@@ -40,12 +40,12 @@ export default function TweetGrid({ tweets }: TweetGridProps) {
             <div className="flex items-center gap-2 w-full">
               <img src={tweet.img} alt="profile" className="w-[42px] h-[42px] rounded-full" />
               <div className="flex flex-col w-full">
-                <p className="font-bold leading-none max-w-[85%]">{tweet.name}</p>
-                <p className="text-sm font-semibold text-[#6b7280] max-w-[85%] text-ellipsis overflow-hidden whitespace-nowrap">{tweet.username}</p>
+                <p className="font-semibold leading-none max-w-[85%]">{tweet.name}</p>
+                <p className="text-sm font-medium text-[#6b7280] max-w-[85%] text-ellipsis overflow-hidden whitespace-nowrap">{tweet.username}</p>
               </div>
             </div>
-            <p className="text-sm">{truncateText(tweet.text, 120)}</p>
-            <div className="flex gap-4 text-sm text-[#6b7280] font-semibold items-center">
+            <p className="text-sm font-light">{truncateText(tweet.text, 120)}</p>
+            <div className="flex gap-4 text-sm text-[#6b7280] font-medium items-center">
               <div className="flex items-center gap-1">
                 <svg viewBox="0 0 24 20" aria-hidden="true" className="w-[16px] h-[16px]" fill="#6b7280">
                   <g>
