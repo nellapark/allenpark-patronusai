@@ -24,7 +24,9 @@ export default function TweetGrid({ tweets }: TweetGridProps) {
   };
 
   const openTweet = (url: string) => {
-    window.open(url, '_blank');
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank');
+    }
   };
 
   const renderTweets = (startIndex: number, endIndex: number) => {

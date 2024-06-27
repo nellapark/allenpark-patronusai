@@ -109,6 +109,12 @@ export default function Gallery() {
     };
   };
 
+  const openNewTab = (url: string) => {
+    if (typeof window !== 'undefined') {
+      window.open(url, '_blank');
+    }
+  }
+
   return (
     <div className="gallery">
        <div className="gallery-tabs">
@@ -231,15 +237,15 @@ export default function Gallery() {
             My portfolio below has a more extensive list of my projects and applications.<br/>
           </div>
           <div className="flex w-full h-full py-4 justify-between items-center">
-            <div className="project-card" onClick={() => window.open('https://allenjpark.com', '_blank')}>
+            <div className="project-card" onClick={() => openNewTab("https://allenjpark.com")}>
               <img src={allenjpark.src} alt="allenjpark" className="h-8"/>
               <div>portfolio</div>
             </div>
-            <div className="project-card" onClick={() => window.open('https://sogaeting.vercel.app', '_blank')}>
+            <div className="project-card" onClick={() => openNewTab("https://sogaeting.vercel.app")}>
               <img src={sogaeting.src} alt="sogaeting" className="h-8"/>
               <div>sogaeting</div>
             </div>
-            <div className="project-card" onClick={() => window.open('https://fronthouse-eosin.vercel.app', '_blank')}>
+            <div className="project-card" onClick={() => openNewTab("https://fronthouse-eosin.vercel.app")}>
               <svg height="24" viewBox="0 0 30 28" className="project-card:hover:fill-white" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.875 24.75H26.125M6.875 19.25H26.125L27.5 6.875L22 11L16.5 4.125L11 11L5.5 6.875L6.875 19.25Z" stroke="var(--solid-colors--black)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
@@ -282,7 +288,7 @@ export default function Gallery() {
             {
               recentPaperArticles.map((article, index) => {
                 return (
-                  <div key={index} className="paperarticle-card" onClick={() => window.open(article.url, '_blank')}>
+                  <div key={index} className="paperarticle-card" onClick={() => openNewTab(article.url)}>
                     <div className="font-semibold">{article.title}</div>
                     <div className="flex flex-col gap-2">
                       <div className="text-[#6b7280]">{article.authors}</div>
