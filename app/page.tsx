@@ -63,6 +63,15 @@ export default function Home() {
           <Reservations />
         </div>
       </div>
+      <div className="flex flex-col justify-center items-center h-screen w-full bg-[#1b0d20]">
+        <div className="hidden">Credit to Scale.com for the beautiful website and inspiration for this section!</div>
+        <div className="cta-header py-12">
+          The future of the <br /> industry <span className="styled-text">begins with us.</span>
+        </div>
+        <div className="cta-button">
+            Let's Work
+        </div>
+      </div>
     </main>
   );
 }
