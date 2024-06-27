@@ -98,7 +98,7 @@ export default function Home() {
         </div>
         <div className="z-10 w-5/6 flex flex-col items-center gap-16 pt-24 pb-12" ref={perfectFitRef}>
           <h1 className={`text-header ${isMobile ? "mobile-header-text" : ""}`}>How I fit with Patronus</h1>
-          <Gallery />
+          <Gallery isMobile={isMobile} />
         </div>
       </div>
       {!isMobile && (

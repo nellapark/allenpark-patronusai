@@ -11,12 +11,8 @@
 }
 
 .gallery-tabs {
-  width: 25%;
-  height: 100%;
   display: flex;
   padding: 24px;
-  display: flex;
-  flex-direction: column;
   gap: 8px;
 }
 
@@ -31,18 +27,18 @@
   gap: 8px;
 }
 
+.tab-mobile-padding {
+  padding: 6px !important;
+}
+
 .gallery-tab:hover {
   background-color: #F2F1EF;
 }
 
 .gallery-content {
-  width: 75%;
-  height: 100%;
   color: var(--solid-colors--black);
   box-sizing: border-box;
-  padding: 36px;
   border-radius: 0px 14px 14px 0px;
-  font-size: 18px;
 }
 
 .gallery-content-inner {
