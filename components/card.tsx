@@ -9,9 +9,10 @@ import ownMenus from '../assets/ownMenus.png';
 
 interface CardProps {
   cardNumber: number;
+  isMobile: boolean;
 }
 
-export default function Card({cardNumber}: CardProps) {
+export default function Card({cardNumber, isMobile}: CardProps) {
   const [fiveStudentsTextHover, setFiveStudentsTextHover] = useState(false);
   const [universityPopUpsTextHover, setUniversityPopUpsTextHover] = useState(false);
   const [restaurantServicesTextHover, setRestaurantServicesTextHover] = useState(false);
@@ -65,7 +66,7 @@ export default function Card({cardNumber}: CardProps) {
   }
 
   return (
-    <div className="card">
+    <div className={`card ${isMobile ? "w-full" : "w-[32%]"}`}>
       {
         cardNumber === 0 ? rocketIcon() : cardNumber === 1 ? starsIcon() : orgIcon()
       }
