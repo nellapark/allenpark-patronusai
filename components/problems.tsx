@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import '../styles/problems.css';
+import Correlation from '../assets/correlations.png';
 import TweetGrid from '../components/tweetgrid';
 
 interface Tweet {
@@ -165,9 +166,19 @@ export default function Problems() {
           </div>
         </div>
         <div className="w-3/5 flex items-center justify-center h-full pl-12">
-          <div className="h-full">
-            <TweetGrid tweets={tweets} />
-          </div>
+          {
+            hoveredProblem === -1 ? (
+              <div className="h-full">
+                <TweetGrid tweets={tweets} />
+              </div>
+            ) : hoveredProblem === 0 ? (
+              <div />
+            ) : hoveredProblem === 1 ? (
+              <div />
+            ) : hoveredProblem === 2 ? (
+              <img src={Correlation.src} alt="correlation" />
+            ) : null
+          }
         </div>
       </div>
     </div>
