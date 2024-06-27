@@ -91,9 +91,9 @@ export default function Home() {
         <div className="z-10 w-5/6 flex flex-col items-center gap-16 py-24" ref={aboutRef}>
           <h1 className={`${isMobile ? "text-header-mobile" : "text-header"}`}>About Me</h1>
           <div className={`flex justify-between w-full ${isMobile ? "flex-col" : "flex-row"}`}>
-            <Card cardNumber={0} />
-            <Card cardNumber={1} />
-            <Card cardNumber={2} />
+            <Card cardNumber={0} isMobile={isMobile} />
+            <Card cardNumber={1} isMobile={isMobile} />
+            <Card cardNumber={2} isMobile={isMobile} />
           </div>
         </div>
         <div className="z-10 w-5/6 flex flex-col items-center gap-16 pt-24 pb-12" ref={perfectFitRef}>
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="hidden">Credit to Scale.com for the beautiful website and inspiration for this section!</div>
         <div className="w-5/6 flex flex-col items-center gap-12">
           <h1 className={`${isMobile ? "text-header-mobile" : "text-header"}`}>Automated Evaluation is Broken</h1>
-          <Problems />
+          <Problems isMobile={isMobile} />
         </div>
       </div>
       <div className="flex flex-col items-center bg-[#1b0d20] w-full pt-32 py-8" ref={reservationsRef}>

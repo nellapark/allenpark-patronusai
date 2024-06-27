@@ -17,7 +17,7 @@ interface Tweet {
   url: string;
 }
 
-export default function Problems() {
+export default function Problems({ isMobile }: { isMobile: boolean }) {
   const [hoveredProblem, setHoveredProblem] = useState<number>(-1);
 
   const tweets: Tweet[] = [
@@ -143,46 +143,78 @@ export default function Problems() {
 
   return (
     <div>
-      <div className="flex w-full h-[600px]">
-        <div className="w-2/5">
-          <div className="problem-section border-b border-[#1f1f1f] border-opacity-20 hover:border-opacity-100 duration-300 ease-in-out" style={hoveredProblem === 0 || hoveredProblem === -1 ? {opacity: 1} : {opacity: 0.3}} onMouseEnter={() => setHoveredProblem(0)} onMouseLeave={() => setHoveredProblem(-1)}>
-            <h1 className="problem-header">Open Source Will Fail</h1>
-            <div className="problem-description">
-              GPT-4 achieved a <span className="font-extrabold">57%</span> exact match rate of the MMLU benchmark, predicting missing options <a href="https://arxiv.org/abs/2311.09783" target="_blank"><u>(paper)</u></a>. Open source evaluation benchmarks are quite dangerous
-              for high risk use cases as they provide a false positive for LLM performance and reliability. Oddly enough, Patronus is one of few evaluation solutions that are closed source.
-            </div>
+      {
+        isMobile ?
+        <>
+          <div className="flex w-full h-[600px]">
+            <TweetGrid tweets={tweets} />
           </div>
-          <div className="problem-section border-b border-[#1f1f1f] border-opacity-20 hover:border-opacity-100 duration-300 ease-in-out" style={hoveredProblem === 1 || hoveredProblem === -1 ? {opacity: 1} : {opacity: 0.3}} onMouseEnter={() => setHoveredProblem(1)} onMouseLeave={() => setHoveredProblem(-1)}>
-            <h1 className="problem-header">Research Focus &gt; Business Focus</h1>
-            <div className="problem-description">
-              This is first a research problem not a business problem. While other companies focus first on optimizing the business,
-              sometimes in suspicious ways <a href="https://www.nytimes.com/2023/08/07/technology/ai-start-ups-competition.html" target="_blank"><u>(Arize AI snoops on Arthur AI)</u></a>, Patronus takes a research first approach setting it up for success.
-            </div>
-          </div>
-          <div className="problem-section border-b border-[#1f1f1f] border-opacity-20 hover:border-opacity-100 duration-300 ease-in-out" style={hoveredProblem === 2 || hoveredProblem === -1 ? {opacity: 1} : {opacity: 0.3}} onMouseEnter={() => setHoveredProblem(2)} onMouseLeave={() => setHoveredProblem(-1)}>
-            <h1 className="problem-header">Poor Public Benchmarks</h1>
-            <div className="problem-description">
-              Academic benchmarks aren&rsquo;t suited for every specific problem and use case.
-              Top academic benchmarks like BLEU/ROUGE & F1 also have been shown to inaccurate when indexed against human evaluation <a href="https://arxiv.org/abs/2108.06130" target="_blank"><u>(paper)</u></a>. Patronus addresses real world use case problems (i.e. copyright & legal)
-            </div>
-          </div>
-        </div>
-        <div className="w-3/5 flex items-center justify-center h-full pl-12">
-          {
-            hoveredProblem === -1 ? (
-              <div className="h-full">
-                <TweetGrid tweets={tweets} />
+          <div className="flex w-full h-[600px]">
+            <div className="problem-section border-b border-[#1f1f1f] border-opacity-20">
+              <h1 className="problem-header">Open Source Will Fail</h1>
+              <div className="problem-description">
+                GPT-4 achieved a <span className="font-extrabold">57%</span> exact match rate of the MMLU benchmark, predicting missing options <a href="https://arxiv.org/abs/2311.09783" target="_blank"><u>(paper)</u></a>. Open source evaluation benchmarks are quite dangerous
+                for high risk use cases as they provide a false positive for LLM performance and reliability. Oddly enough, Patronus is one of few evaluation solutions that are closed source.
               </div>
-            ) : hoveredProblem === 0 ? (
-              <ContaminationVisual />
-            ) : hoveredProblem === 1 ? (
-              <BarGraphs />
-            ) : hoveredProblem === 2 ? (
-              <img src={Correlation.src} alt="correlation" />
-            ) : null
-          }
+            </div>
+            <div className="problem-section border-b border-[#1f1f1f] border-opacity-20">
+              <h1 className="problem-header">Research Focus &gt; Business Focus</h1>
+              <div className="problem-description">
+                This is first a research problem not a business problem. While other companies focus first on optimizing the business,
+                sometimes in suspicious ways <a href="https://www.nytimes.com/2023/08/07/technology/ai-start-ups-competition.html" target="_blank"><u>(Arize AI snoops on Arthur AI)</u></a>, Patronus takes a research first approach setting it up for success.
+              </div>
+            </div>
+            <div className="problem-section border-b border-[#1f1f1f] border-opacity-20">
+              <h1 className="problem-header">Poor Public Benchmarks</h1>
+              <div className="problem-description">
+                Academic benchmarks aren&rsquo;t suited for every specific problem and use case.
+                Top academic benchmarks like BLEU/ROUGE & F1 also have been shown to inaccurate when indexed against human evaluation <a href="https://arxiv.org/abs/2108.06130" target="_blank"><u>(paper)</u></a>. Patronus addresses real world use case problems (i.e. copyright & legal)
+              </div>
+            </div>
+          </div>
+        </>
+        :
+        <div className="flex w-full h-[600px]">
+          <div className="w-2/5">
+            <div className="problem-section border-b border-[#1f1f1f] border-opacity-20 hover:border-opacity-100 duration-300 ease-in-out" style={hoveredProblem === 0 || hoveredProblem === -1 ? {opacity: 1} : {opacity: 0.3}} onMouseEnter={() => setHoveredProblem(0)} onMouseLeave={() => setHoveredProblem(-1)}>
+              <h1 className="problem-header">Open Source Will Fail</h1>
+              <div className="problem-description">
+                GPT-4 achieved a <span className="font-extrabold">57%</span> exact match rate of the MMLU benchmark, predicting missing options <a href="https://arxiv.org/abs/2311.09783" target="_blank"><u>(paper)</u></a>. Open source evaluation benchmarks are quite dangerous
+                for high risk use cases as they provide a false positive for LLM performance and reliability. Oddly enough, Patronus is one of few evaluation solutions that are closed source.
+              </div>
+            </div>
+            <div className="problem-section border-b border-[#1f1f1f] border-opacity-20 hover:border-opacity-100 duration-300 ease-in-out" style={hoveredProblem === 1 || hoveredProblem === -1 ? {opacity: 1} : {opacity: 0.3}} onMouseEnter={() => setHoveredProblem(1)} onMouseLeave={() => setHoveredProblem(-1)}>
+              <h1 className="problem-header">Research Focus &gt; Business Focus</h1>
+              <div className="problem-description">
+                This is first a research problem not a business problem. While other companies focus first on optimizing the business,
+                sometimes in suspicious ways <a href="https://www.nytimes.com/2023/08/07/technology/ai-start-ups-competition.html" target="_blank"><u>(Arize AI snoops on Arthur AI)</u></a>, Patronus takes a research first approach setting it up for success.
+              </div>
+            </div>
+            <div className="problem-section border-b border-[#1f1f1f] border-opacity-20 hover:border-opacity-100 duration-300 ease-in-out" style={hoveredProblem === 2 || hoveredProblem === -1 ? {opacity: 1} : {opacity: 0.3}} onMouseEnter={() => setHoveredProblem(2)} onMouseLeave={() => setHoveredProblem(-1)}>
+              <h1 className="problem-header">Poor Public Benchmarks</h1>
+              <div className="problem-description">
+                Academic benchmarks aren&rsquo;t suited for every specific problem and use case.
+                Top academic benchmarks like BLEU/ROUGE & F1 also have been shown to inaccurate when indexed against human evaluation <a href="https://arxiv.org/abs/2108.06130" target="_blank"><u>(paper)</u></a>. Patronus addresses real world use case problems (i.e. copyright & legal)
+              </div>
+            </div>
+          </div>
+          <div className="w-3/5 flex items-center justify-center h-full pl-12">
+            {
+              hoveredProblem === -1 ? (
+                <div className="h-full">
+                  <TweetGrid tweets={tweets} />
+                </div>
+              ) : hoveredProblem === 0 ? (
+                <ContaminationVisual />
+              ) : hoveredProblem === 1 ? (
+                <BarGraphs />
+              ) : hoveredProblem === 2 ? (
+                <img src={Correlation.src} alt="correlation" />
+              ) : null
+            }
+          </div>
         </div>
-      </div>
+      }
     </div>
   );
 }
