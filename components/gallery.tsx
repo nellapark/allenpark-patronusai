@@ -226,8 +226,8 @@ export default function Gallery() {
         </div>
         <div className="gallery-content-inner" style={tab === 1 ? {display: 'flex'} : {display: 'none'}}>
           <div>
-            I've taken many ideas and features from zero to production, extending beyond software engineering to designing products, interviewing customers, etc.
-            As a result, I've worked and communicated across every product chain: design-frontend, frontend-backend, ML-code, and code-deployment.
+            I&rsquo;ve taken many ideas and features from zero to production, extending beyond software engineering to designing products, interviewing customers, etc.
+            As a result, I&rsquo;ve worked and communicated across every product chain: design-frontend, frontend-backend, ML-code, and code-deployment.
             My portfolio below has a more extensive list of my projects and applications.<br/>
           </div>
           <div className="flex w-full h-full py-4 justify-between items-center">
@@ -249,10 +249,8 @@ export default function Gallery() {
         </div>
         <div className="gallery-content-inner" style={tab === 2 ? {display: 'flex'} : {display: 'none'}}>
           <div className="w-full">
-            Startups aren't easy. They are extremely demoralizing. I experienced it while pursuing a marketplace idea selling leftover organic produce from local farmers markets.
+            Startups aren&rsquo;t easy. They are extremely demoralizing. I experienced it while pursuing a marketplace idea selling leftover organic produce from local farmers markets.
             I started door to door and iterated on distribution approaches (i.e. target lower middle class neighborhoods since affluent neighborhoods are price inelastic), going from $0 MRR to ~$55 MRR in a month and ending with ~$280 MRR. 
-            {/* Designed and built a website with quick search and one click purchase.<br/> */}
-            {/* Marketed to specific neighborhoods after conducting ideal customer segment research.<br/> */}
           </div>
           <div className="flex w-full h-full justify-between items-center">
             <img src={apples.src} alt="apples" className="w-1/4 rounded-lg object-contain"/>
@@ -262,7 +260,7 @@ export default function Gallery() {
         </div>
         <div className="gallery-content-inner" style={tab === 3 ? {display: 'flex'} : {display: 'none'}}>
           <div>
-            Speed is your biggest advantage as a startup. I've taken applications and features from design to deployment in days.
+            Speed is your biggest advantage as a startup. I&rsquo;ve taken applications and features from design to deployment in days.
             Accelerating the development cycle and getting user feedback as soon as possible is not only exhilarating but also critical for success.
           </div>
           <div className="w-full flex flex-col gap-12">
@@ -276,9 +274,9 @@ export default function Gallery() {
         </div>
         <div className="gallery-content-inner" style={tab === 4 ? {display: 'flex'} : {display: 'none'}}>
           <div>
-            I'll always have the student mindset to be curious and constantly learn. Innovation moves really fast so it's crucial to keep up with the latest models and developments.
+            I&rsquo;ll always have the student mindset to be curious and constantly learn. Innovation moves really fast so it&rsquo;s crucial to keep up with the latest models and developments.
             One way I keep myself accountable is by exchanging tech news and research papers with my close friend and previous co-founder.
-            Here are some of papers and articles I've recently sent to my friend.
+            Here are some of papers and articles I&rsquo;ve recently sent to my friend.
           </div>
           <div className="flex gap-4 py-8 overflow-x-scroll w-full">
             {
@@ -300,9 +298,9 @@ export default function Gallery() {
           <div>
             My favorite experience from Princeton was fostering a strong culture with P Pop Up.
             The unbreakable bond was rooted in working extremely hard together towards a unified mission. I want to do the same at Patronus AI.
-            I've also been fortunate to meet such talented people (some started YC companies or joined early stage startups like Warp)
+            I&rsquo;ve also been fortunate to meet such talented people (some started YC companies or joined early stage startups like Warp)
             through organizing startup dinners which demonstrated the importance of genuine curiosity and positive sum thinking.
-            I'd want to contribute beyond the products we ship and into the culture that is fostered.
+            I&rsquo;d want to contribute beyond the products we ship and into the culture that is fostered.
           </div>
           <div className="flex w-full h-full justify-between items-center">
             <img src={ppopupdin.src} alt="ppopupdin" className="w-1/4 rounded-lg object-contain"/>

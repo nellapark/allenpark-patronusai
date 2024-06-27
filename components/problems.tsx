@@ -34,7 +34,7 @@ export default function Problems() {
       img: "https://pbs.twimg.com/profile_images/1676934464159756291/1lM4joGC_400x400.jpg",
       name: "Yi Tay",
       username: "@YiTayML",
-      text: "Community: Eval for LLMs are broken! Academic benchmarks are not representative of real world performance! 🙅‍♂️. We need better evals!\n\nAlso the same community: Lets make definitive rankings & leaderboards based on just four zero-shot \"LM harness\" tasks!🤷‍♂️🤷‍♂️\n\nNot wanting to single out any effort 😂, but also human eval on some arbitrary prompt distribution is also problematic for many reasons.\n\nAttempting to make sense of the LLM madness is a a good thing but at this point its best to just not blindly trust any eval.\n\nIt might be also interesting to check, from maybe a social science POV, of how many of these evals have a strange COI situation going on. Even if there's no bias towards any model, there is also a strange bias to \"hype grab\" by positioning oneself as the game master which has also many weird problems.\n\nThere is just no good way right now.",
+      text: "Community: Eval for LLMs are broken! Academic benchmarks are not representative of real world performance! 🙅‍♂️. We need better evals!\n\nAlso the same community: Lets make definitive rankings & leaderboards based on just four zero-shot \"LM harness\" tasks!🤷‍♂️🤷‍♂️\n\nNot wanting to single out any effort 😂, but also human eval on some arbitrary prompt distribution is also problematic for many reasons.\n\nAttempting to make sense of the LLM madness is a a good thing but at this point its best to just not blindly trust any eval.\n\nIt might be also interesting to check, from maybe a social science POV, of how many of these evals have a strange COI situation going on. Even if there&rsquo;s no bias towards any model, there is also a strange bias to \"hype grab\" by positioning oneself as the game master which has also many weird problems.\n\nThere is just no good way right now.",
       likes: 373,
       date: "May 20, 2023",
       url: "https://twitter.com/YiTayML/status/1659789514150387713"
@@ -162,7 +162,7 @@ export default function Problems() {
           <div className="problem-section border-b border-[#1f1f1f] border-opacity-20 hover:border-opacity-100 duration-300 ease-in-out" style={hoveredProblem === 2 || hoveredProblem === -1 ? {opacity: 1} : {opacity: 0.3}} onMouseEnter={() => setHoveredProblem(2)} onMouseLeave={() => setHoveredProblem(-1)}>
             <h1 className="problem-header">Poor Public Benchmarks</h1>
             <div className="problem-description">
-              Academic benchmarks aren't suited for every specific problem and use case.
+              Academic benchmarks aren&rsquo;t suited for every specific problem and use case.
               Top academic benchmarks like BLEU/ROUGE & F1 also have been shown to inaccurate when indexed against human evaluation <a href="https://arxiv.org/abs/2108.06130" target="_blank"><u>(paper)</u></a>. Patronus addresses real world use case problems (i.e. copyright & legal)
             </div>
           </div>

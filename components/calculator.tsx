@@ -105,7 +105,7 @@ export default function Calculator() {
                 {showChurnTooltip && (
                   <div className="absolute right-0 mt-1 w-[225px] transform bg-black text-white text-sm px-3 py-2 rounded z-10">
                     In very high stakes industries (i.e. legal, medical, etc.), it only takes 1 critical mistake for customers to churn.
-                    The expected value of churn is based on the number of contracts and the model's mistake rate which would normalize over large numbers.
+                    The expected value of churn is based on the number of contracts and the model&rsquo;s mistake rate which would normalize over large numbers.
                   </div>
                 )}
               </div>

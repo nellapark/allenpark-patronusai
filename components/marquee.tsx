@@ -56,8 +56,8 @@ const Marquee: React.FC = () => {
         <h1 className="text-[var(--solid-colors--black)] font-light">Approved & vetted by:</h1>
           <ul className="flex items-evenly justify-between w-full h-1/5">
             {
-              logos.map((logoObj) => (
-                <div className="image-container">
+              logos.map((logoObj, index) => (
+                <div className="image-container" key={index}>
                   <li className="w-24 cursor-pointer">
                     <img src={logoObj.bwLogo.src} alt={logoObj.bwLogo.src} className="bw-image w-full object-cover" />
                     <img src={logoObj.regularLogo.src} alt={logoObj.regularLogo.src} className="color-image w-full object-cover" />

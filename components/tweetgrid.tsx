@@ -29,8 +29,8 @@ export default function TweetGrid({ tweets }: TweetGridProps) {
 
   const renderTweets = (startIndex: number, endIndex: number) => {
     return (
-      tweets.slice(startIndex, endIndex).map((tweet) => (
-        <div className="tweet-container">
+      tweets.slice(startIndex, endIndex).map((tweet, index) => (
+        <div className="tweet-container" key={index}>
           <div className="tweet" onClick={() => openTweet(tweet.url)}>
             <svg className="w-[18px] h-[18px] absolute right-3 top-3" xmlns="http://www.w3.org/2000/svg" fill="#1DA1F2" viewBox="0 0 24 24" stroke="none">
               <g>

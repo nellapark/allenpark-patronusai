@@ -32,7 +32,7 @@ export default function Home() {
         <h1 className="text-header">Allen Park &lt;&gt; Patronus AI</h1>
         <div className="text-[--solid-colors--black] font-semibold">
         Real world LLM evaluation is a hair on fire problem yet current solutions suck. <br />
-        Let's shape <span className="styled-text">the landscape</span> and make the Moody's of AI.
+        Let&rsquo;s shape <span className="styled-text">the landscape</span> and make the Moody&rsquo;s of AI.
         </div>
       </div>
       <WaveAnimation />
@@ -84,8 +84,8 @@ export default function Home() {
         <div className="cta-header py-12">
           The future of the <br /> industry <span className="styled-text">begins with us.</span>
         </div>
-        <div className="cta-button" onClick={() => {window.location.href = "mailto:parknella19@gmail.com?subject=Let's Work&body=Hey Allen,";}}>
-            Let's Work
+        <div className="cta-button" onClick={() => {window.location.href = "mailto:parknella19@gmail.com?subject=Let&rsquo;s Work&body=Hey Allen,";}}>
+            Let&rsquo;s Work
         </div>
       </div>
     </main>
