@@ -16,3 +16,9 @@
   font-weight: 700;
   margin-bottom: 5px;
 }
+
+.problem-description {
+  color: var(--solid-colors--black);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
