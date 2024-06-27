@@ -176,6 +176,15 @@
   text-align: center;
 }
 
+.cta-header-mobile {
+  color: #fff;
+  letter-spacing: -.04em;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 300;
+  text-align: center;
+}
+
 .cta-button {
   color: #fff;
   font-weight: 200;
