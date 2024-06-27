@@ -65,3 +65,31 @@
   border-image-slice: 1;
   background: radial-gradient(43.9% 100% at 50% 0, rgba(154, 102, 219, 0.15) 0, rgba(1, 3, 20, 0) 100%);
 }
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://cdn.prod.website-files.com/64e655d42d3be60f582d0472/64ed03812dcb25c818ff40ce_abstract-lines-2.png');
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: 150%;
+  animation: floatBackground 10s ease-in-out infinite;
+  .background-image img {
+    transform: scale(2);
+  }
+}
+
+@keyframes floatBackground {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
