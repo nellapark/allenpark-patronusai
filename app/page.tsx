@@ -18,6 +18,11 @@ export default function Home() {
   const whyPatronusRef = useRef<HTMLDivElement>(null);
   const reservationsRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+
+  const createEmailTemplate = () => {
+    window.location.href = "mailto:parknella19@gmail.com?subject=Let&rsquo;s Work&body=Hey Allen,";
+  }
+
   return (
     <main className="bg-white" ref={heroRef}>
       <GlassmorphicNav
@@ -84,7 +89,7 @@ export default function Home() {
         <div className="cta-header py-12">
           The future of the <br /> industry <span className="styled-text">begins with us.</span>
         </div>
-        <div className="cta-button" onClick={() => {window.location.href = "mailto:parknella19@gmail.com?subject=Let&rsquo;s Work&body=Hey Allen,";}}>
+        <div className="cta-button" onClick={createEmailTemplate}>
             Let&rsquo;s Work
         </div>
       </div>
