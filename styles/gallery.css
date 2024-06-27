@@ -37,7 +37,6 @@
 
 .gallery-content {
   color: var(--solid-colors--black);
-  padding: 36px;
   box-sizing: border-box;
   border-radius: 0px 14px 14px 0px;
 }
