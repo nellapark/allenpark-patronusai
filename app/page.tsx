@@ -77,7 +77,7 @@ export default function Home() {
         />
       )}
       <div className="header-container">
-        <h1 className="text-header">Allen Park &lt;&gt; Patronus AI</h1>
+        <h1 className={`${isMobile ? "text-header-mobile" : "text-header"}`}>Allen Park &lt;&gt; Patronus AI</h1>
         <div className="text-[--solid-colors--black] font-semibold">
         Real world LLM evaluation is a hair on fire problem yet current solutions suck. <br />
         Let&rsquo;s shape <span className="styled-text">the landscape</span> and make the Moody&rsquo;s of AI.
@@ -89,7 +89,7 @@ export default function Home() {
         <div className="background-image" />
         <div className="styled-divider"></div>
         <div className="z-10 w-5/6 flex flex-col items-center gap-16 py-24" ref={aboutRef}>
-          <h1 className="text-header">About Me</h1>
+          <h1 className={`${isMobile ? "text-header-mobile" : "text-header"}`}>About Me</h1>
           <div className="flex justify-between w-full">
             <Card cardNumber={0} />
             <Card cardNumber={1} />
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         </div>
         <div className="z-10 w-5/6 flex flex-col items-center gap-16 pt-24 pb-12" ref={perfectFitRef}>
-          <h1 className="text-header">How I fit with Patronus</h1>
+          <h1 className={`${isMobile ? "text-header-mobile" : "text-header"}`}>How I fit with Patronus</h1>
           <Gallery />
         </div>
       </div>
@@ -117,7 +117,7 @@ export default function Home() {
       <div className="flex flex-col items-center w-full py-32 relative">
         <div className="hidden">Credit to Scale.com for the beautiful website and inspiration for this section!</div>
         <div className="w-5/6 flex flex-col items-center gap-12">
-          <h1 className="text-header">Automated Evaluation is Broken</h1>
+          <h1 className={`${isMobile ? "text-header-mobile" : "text-header"}`}>Automated Evaluation is Broken</h1>
           <Problems />
         </div>
       </div>

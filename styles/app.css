@@ -66,6 +66,18 @@
   font-weight: 600;
 }
 
+.text-header-mobile {
+  color: #fff;
+  background-image: linear-gradient(120deg,#02f -100%, #b03de2 40%, 70%, #02f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: -.04em;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .styled-text {
   background-image: linear-gradient(120deg,#02f -100%, #b03de2 40%, 70%, #02f);
   background-clip: text;
