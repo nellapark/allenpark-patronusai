@@ -4,6 +4,7 @@ import Marquee from "../components/marquee";
 import Card from "../components/card";
 import Gallery from "../components/gallery";
 import Calculator from "../components/calculator";
+import Problems from "../components/problems";
 import "../styles/app.css";
 
 export default function Home() {
@@ -46,6 +47,13 @@ export default function Home() {
             </div>
           </div>
           <Calculator />
+        </div>
+      </div>
+      <div className="flex flex-col items-center w-full py-32 relative">
+        <div className="hidden">Credit to Scale.com for the beautiful website and inspiration for this section!</div>
+        <div className="w-5/6 flex flex-col items-center gap-12">
+          <h1 className="text-header">Automated Evaluation is Broken</h1>
+          <Problems />
         </div>
       </div>
     </main>

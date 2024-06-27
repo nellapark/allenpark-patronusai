@@ -1,0 +1,59 @@
+.tweets-container {
+  display: flex;
+  height: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  color: var(--solid-colors--black);
+  height: 100%;
+  overflow: hidden;
+}
+
+.column-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.column-odd {
+  animation: moveUp 40s linear infinite;
+}
+
+.column-even {
+  animation: moveDown 50s linear infinite;
+}
+
+.tweet-container {
+  padding: 8px;
+}
+
+.tweet {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid #e5e7ea;
+  border-radius: 5px;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
