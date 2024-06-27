@@ -15,6 +15,7 @@ import allenjpark from '../assets/allenjpark_icon.png';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const perfectFitRef = useRef<HTMLDivElement>(null);
@@ -37,8 +38,23 @@ export default function Home() {
     console.log("Hello Developer!")
   }
 
+  const handleResize = () => {
+    if (window.innerWidth < 760) {
+        setIsMobile(true)
+    } else {
+        setIsMobile(false)
+    }
+  }
+
   useEffect(() => {
     setTimeout(() => handleLoading(), 1000);
+    if (window.innerWidth < 760) {
+      setIsMobile(true);
+    }
+    window.addEventListener( 'resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
