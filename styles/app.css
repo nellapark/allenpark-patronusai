@@ -175,6 +175,8 @@
   line-height: 3rem;
   font-weight: 300;
   text-align: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .cta-button {
