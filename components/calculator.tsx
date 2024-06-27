@@ -103,7 +103,7 @@ export default function Calculator() {
               <div className="relative cursor-pointer" onClick={handleChurnTooltipClick}>
                 <u>Customer Churn EV</u>
                 {showChurnTooltip && (
-                  <div className="calculator-tooltip transform z-10">
+                  <div className="absolute right-0 mt-1 w-[225px] transform bg-black text-white text-sm px-3 py-2 rounded z-10">
                     In very high stakes industries (i.e. legal, medical, etc.), it only takes 1 critical mistake for customers to churn.
                     The expected value of churn is based on the number of contracts and the model's mistake rate which would normalize over large numbers.
                   </div>
@@ -147,7 +147,7 @@ export default function Calculator() {
               <div className="relative cursor-pointer" onClick={handleDamageTooltipClick}>
                 <u>Damage Control EV</u>
                 {showDamageTooltip && (
-                  <div className="calculator-tooltip transform">
+                  <div className="absolute right-0 mt-1 w-[225px] transform bg-black text-white text-sm px-3 py-2 rounded z-10">
                     LLM mistakes can incur costs such as fines or infrastructure repairing costs.
                   </div>
                 )}
