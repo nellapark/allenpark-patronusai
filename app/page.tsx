@@ -20,7 +20,9 @@ export default function Home() {
   const ctaRef = useRef<HTMLDivElement>(null);
 
   const createEmailTemplate = () => {
-    window.location.href = "mailto:parknella19@gmail.com?subject=Let&rsquo;s Work&body=Hey Allen,";
+    if (typeof window !== 'undefined') {
+      window.location.href = "mailto:parknella19@gmail.com?subject=Let&rsquo;s Work&body=Hey Allen,";
+    }
   }
 
   return (
