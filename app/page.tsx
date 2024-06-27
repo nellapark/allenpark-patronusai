@@ -65,15 +65,17 @@ export default function Home() {
         <div className="mt-2">Let&rsquo;s shape the future.</div>
       </div>
       </div>
-      <GlassmorphicNav
-        heroRef={heroRef}
-        aboutRef={aboutRef}
-        perfectFitRef={perfectFitRef}
-        whyPatronusRef={whyPatronusRef}
-        reservationsRef={reservationsRef}
-        ctaRef={ctaRef}
-        isLoading={isLoading}
-      />
+      {!isMobile && (
+        <GlassmorphicNav
+          heroRef={heroRef}
+          aboutRef={aboutRef}
+          perfectFitRef={perfectFitRef}
+          whyPatronusRef={whyPatronusRef}
+          reservationsRef={reservationsRef}
+          ctaRef={ctaRef}
+          isLoading={isLoading}
+        />
+      )}
       <div className="header-container">
         <h1 className="text-header">Allen Park &lt;&gt; Patronus AI</h1>
         <div className="text-[--solid-colors--black] font-semibold">
