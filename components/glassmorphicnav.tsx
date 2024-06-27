@@ -17,7 +17,7 @@ export default function GlassmorphicNav({heroRef, aboutRef, perfectFitRef, whyPa
 
   const scrollToDiv = (divRef: React.RefObject<HTMLDivElement>) => {
     if (divRef.current) {
-      divRef.current.scrollIntoView({ behavior: 'smooth' });
+      divRef.current.scrollIntoView();
     }
   };
 
