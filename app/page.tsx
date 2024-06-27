@@ -19,6 +19,7 @@ export default function Home() {
       <WaveAnimation />
       <Marquee />
       <div className="flex flex-col items-center w-full py-16 relative overflow-hidden">
+        <div className="styled-divider"></div>
         <div className="z-10 w-5/6 flex flex-col items-center gap-16 py-24">
           <h1 className="text-header">About Me</h1>
           <div className="flex justify-between w-full">
