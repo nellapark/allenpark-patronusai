@@ -116,7 +116,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
   }
 
   return (
-    <div className={`gallery ${isMobile ? "flex-col h-[800px]" : "h-[525px]"}`}>
+    <div className={`gallery ${isMobile ? "flex-col" : ""}`}>
        <div className={`gallery-tabs ${isMobile ? "flex-row w-full h-1/4 flex-wrap" : "flex-col w-1/4 h-full"}`}>
         <div className={`gallery-tab ${isMobile ? "tab-mobile-padding" : ""}`} style={tab === 0 ? {backgroundColor: '#F2F1EF'} : {}} onClick={() => setTab(0)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 384 512">
@@ -162,7 +162,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
             I saw how consequential mistakes were at the acquired healthcare startup & built an internal prompting tool that aggregated calls and streamlined manual evaluation.
             While pursuing a gen. AI startup, a frequently mentioned hair on fire problem from customer discovery interviews was evaluating LLM outputs. Experiencing this ourselves, I understand how difficult and important the problem is.<br/>
           </div>
-          <div className="flex flex-col gap-12">
+          <div className={`flex flex-col gap-12 ${isMobile ? "hidden" : ""}`}>
             <h1 className="text-center text-2xl font-semibold">Layers of Experience</h1>
             <div className='flex w-full gap-12'>
               <div className="experience-layers">
@@ -236,7 +236,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
             As a result, I&rsquo;ve worked and communicated across every product chain: design-frontend, frontend-backend, ML-code, and code-deployment.
             My portfolio below has a more extensive list of my projects and applications.<br/>
           </div>
-          <div className={`flex w-full h-full py-4 justify-between items-center ${isMobile ? "flex-col gap-4" : ""}`}>
+          <div className={`flex w-full h-full py-4 justify-between items-center ${isMobile ? "hidden" : ""}`}>
             <div className="project-card" onClick={() => openNewTab("https://allenjpark.com")}>
               <img src={allenjpark.src} alt="allenjpark" className="h-8"/>
               <div>portfolio</div>
@@ -258,7 +258,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
             Startups aren&rsquo;t easy. They are extremely demoralizing. I experienced it while pursuing a marketplace idea selling leftover organic produce from local farmers markets.
             I started door to door and iterated on distribution approaches (i.e. target lower middle class neighborhoods since affluent neighborhoods are price inelastic), going from $0 MRR to ~$55 MRR in a month and ending with ~$280 MRR. 
           </div>
-          <div className={`flex w-full h-full justify-between items-center ${isMobile ? "flex-col" : ""}`}>
+          <div className={`flex w-full h-full justify-between items-center ${isMobile ? "hidden" : ""}`}>
             <img src={apples.src} alt="apples" className="w-1/4 rounded-lg object-contain"/>
             <img src={tomatoes.src} alt="cherrytomato" className="w-1/4 rounded-lg object-contain"/>
             <img src={zucchini.src} alt="zucchini" className="w-1/4 rounded-lg object-contain"/>
@@ -269,9 +269,9 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
             Speed is your biggest advantage as a startup. I&rsquo;ve taken applications and features from design to deployment in days.
             Accelerating the development cycle and getting user feedback as soon as possible is not only exhilarating but also critical for success.
           </div>
-          <div className="w-full flex flex-col gap-12">
+          <div className={`w-full flex flex-col gap-12 ${isMobile ? "hidden" : ""}`}>
             <h1 className="text-2xl font-semibold text-center">Project Lifecycles</h1>
-            <div className={`h-full w-full flex ${isMobile ? "flex-col" : ""}`}>
+            <div className="h-full w-full flex">
               <ReactApexChart options={getChartOptions("Portfolio")} series={allenjparkChart} type="donut" width="90%" className="w-1/3 flex justify-center" />
               <ReactApexChart options={getChartOptions("Grabameal")} series={grabamealChart} type="donut" width="90%" className="w-1/3 flex justify-center" />
               <ReactApexChart options={getChartOptions("Intcom")} series={intcomChart} type="donut" width="90%" className="w-1/3 flex justify-center" />
@@ -284,7 +284,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
             One way I keep myself accountable is by exchanging tech news and research papers with my close friend and previous co-founder.
             Here are some of papers and articles I&rsquo;ve recently sent to my friend.
           </div>
-          <div className={`flex gap-4 py-8 overflow-x-scroll w-full ${isMobile ? "flex-col" : ""}`}>
+          <div className={`flex gap-4 py-8 overflow-x-scroll w-full ${isMobile ? "hidden" : ""}`}>
             {
               recentPaperArticles.map((article, index) => {
                 return (
@@ -308,7 +308,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
             through organizing startup dinners which demonstrated the importance of genuine curiosity and positive sum thinking.
             I&rsquo;d want to contribute beyond the products we ship and into the culture that is fostered.
           </div>
-          <div className={`flex w-full h-full justify-between items-center ${isMobile ? "flex-col" : ""}`}>
+          <div className={`flex w-full h-full justify-between items-center ${isMobile ? "hidden" : ""}`}>
             <img src={ppopupdin.src} alt="ppopupdin" className="w-1/4 rounded-lg object-contain"/>
             <img src={startupdin1.src} alt="startupdin1" className="w-1/4 rounded-lg object-contain"/>
             <img src={startupdin2.src} alt="startupdin2" className="w-1/4 rounded-lg object-contain"/>
