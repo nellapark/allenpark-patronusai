@@ -74,7 +74,7 @@ export default function Card({cardNumber}: CardProps) {
         cardNumber === 2 ?
         <div className="relative">
           Rallied up <span className="underline cursor-pointer" onMouseEnter={() => setFiveStudentsTextHover(true)} onMouseLeave={() => setFiveStudentsTextHover(false)}>5 full time students</span> for a restaurant pop up idea. 
-          After powering through a cease and desist, I led the team from <span className="underline cursor-pointer" onMouseEnter={() => setUniversityPopUpsTextHover(true)} onMouseLeave={() => setUniversityPopUpsTextHover(false)}>universitypop ups</span> to
+          After powering through a cease and desist, I led the team from <span className="underline cursor-pointer" onMouseEnter={() => setUniversityPopUpsTextHover(true)} onMouseLeave={() => setUniversityPopUpsTextHover(false)}>university pop ups</span> to
           catering and <span className="underline cursor-pointer" onMouseEnter={() => setRestaurantServicesTextHover(true)} onMouseLeave={() => setRestaurantServicesTextHover(false)}>hosting services at a restaurant</span> with
           our <span className="underline cursor-pointer" onMouseEnter={() => setOwnMenusTextHover(true)} onMouseLeave={() => setOwnMenusTextHover(false)}>own menus</span>. 
           Starting with nothing, we made $9,216.44 and the team is now up to 39 with subteam heads I personally mentored.
