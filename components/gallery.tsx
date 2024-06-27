@@ -156,7 +156,7 @@ export default function Gallery({isMobile}: {isMobile: boolean}) {
           Team Player
           </div>
       </div>
-      <div className={`gallery-content ${isMobile ? "w-full h-1/4 text-sm p-3" : "w-3/4 h-full p-9 text-[18px]"}`}>
+      <div className={`gallery-content ${isMobile ? "w-full h-1/4 text-sm" : "w-3/4 h-full text-[18px]"}`}>
         <div className="gallery-content-inner" style={tab === 0 ? {display: 'flex'} : {display: 'none'}}>
           <div>
             I saw how consequential mistakes were at the acquired healthcare startup & built an internal prompting tool that aggregated calls and streamlined manual evaluation.
