@@ -90,7 +90,7 @@ export default function Home() {
         <div className="styled-divider"></div>
         <div className="z-10 w-5/6 flex flex-col items-center gap-16 py-24" ref={aboutRef}>
           <h1 className={`text-header ${isMobile ? "mobile-header-text" : ""}`}>About Me</h1>
-          <div className={`flex justify-between w-full ${isMobile ? "flex-col gap-2" : "flex-row"}`}>
+          <div className={`flex justify-between w-full ${isMobile ? "flex-col gap-4" : "flex-row"}`}>
             <Card cardNumber={0} isMobile={isMobile} />
             <Card cardNumber={1} isMobile={isMobile} />
             <Card cardNumber={2} isMobile={isMobile} />
