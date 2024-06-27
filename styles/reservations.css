@@ -1,0 +1,29 @@
+.reservation {
+  display: flex;
+  gap: 8px;
+  border-radius: 8px;
+  width: 100%;
+  padding: 28px;
+  justify-content: space-between;
+  cursor: pointer;
+  }
+
+.reservation:hover {
+  background-color: var(--solid-colors--darkpurple);
+}
+
+.reservation-explanation {
+  border-radius: 0px 0px 8px 8px;
+  padding: 28px;
+  background-color: rgba(33, 33, 33, 0.502);
+}
+
+.reservation-explanation:hover {
+  background-color: var(--solid-colors--darkpurple);
+}
+
+.reservation-icon-container {
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+}

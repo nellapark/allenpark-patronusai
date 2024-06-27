@@ -5,6 +5,7 @@ import Card from "../components/card";
 import Gallery from "../components/gallery";
 import Calculator from "../components/calculator";
 import Problems from "../components/problems";
+import Reservations from "@/components/reservations";
 import "../styles/app.css";
 
 export default function Home() {
@@ -59,6 +60,7 @@ export default function Home() {
       <div className="flex flex-col items-center bg-[#1b0d20] w-full pt-32 py-8">
         <div className="flex flex-col w-5/6 gap-8">
           <h1 className="normal-text-header-light">Reservations Q&A</h1>
+          <Reservations />
         </div>
       </div>
     </main>
