@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import '../styles/card.css';
 import fiveStudents from '../assets/fiveStudents.png';
 import universityPopUps from '../assets/universityPopUps.png';
@@ -79,10 +80,10 @@ export default function Card({cardNumber, isMobile}: CardProps) {
           catering and <span className="underline cursor-pointer" onMouseEnter={() => setRestaurantServicesTextHover(true)} onMouseLeave={() => setRestaurantServicesTextHover(false)}>hosting services at a restaurant</span> with
           our <span className="underline cursor-pointer" onMouseEnter={() => setOwnMenusTextHover(true)} onMouseLeave={() => setOwnMenusTextHover(false)}>own menus</span>. 
           Starting with nothing, we made $9,216.44 and the team is now up to 39 with subteam heads I personally mentored.
-          {fiveStudentsTextHover && (<img className="absolute w-full" src={fiveStudents.src} />)}
-          {universityPopUpsTextHover && (<img className="absolute w-full" src={universityPopUps.src} />)}
-          {restaurantServicesTextHover && (<img className="absolute w-full" src={restaurantServices.src} />)}
-          {ownMenusTextHover && (<img className="absolute w-1/2 top-0 left-[-50%] -translate-x-6" src={ownMenus.src} />)}
+          {fiveStudentsTextHover && (<Image className="absolute w-full" alt="five students" src={fiveStudents.src} />)}
+          {universityPopUpsTextHover && (<Image className="absolute w-full" alt="university pop ups" src={universityPopUps.src} />)}
+          {restaurantServicesTextHover && (<Image className="absolute w-full" alt="restaurant services" src={restaurantServices.src} />)}
+          {ownMenusTextHover && (<Image className="absolute w-1/2 top-0 left-[-50%] -translate-x-6" alt="own menus" src={ownMenus.src} />)}
         </div>
         :
         <div>{descriptions[cardNumber]}</div>
